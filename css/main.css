@@ -1,0 +1,344 @@
+main {
+    display: flex;
+    flex-direction: column;
+
+    section {
+        padding: 5rem 20%;
+
+        &:is(:nth-child(even)) {
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-family: var(--sec-font);
+        }
+
+        &#banner {
+            background: url("/images/botafogo_libertadores.webp") center center / cover no-repeat;
+            height: 70vh;
+            padding: 0;
+            display: flex;
+            position: relative;
+
+            img {
+                height: 25%;
+                position: absolute;
+                bottom: -5%;
+                
+                &:first-of-type {
+                    left: 2rem;
+                }
+
+                &:last-of-type {
+                    right: 2rem;
+                }
+            }
+        }
+
+        &#intro  {
+            padding: 2rem;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+
+            h1, p {
+                text-align: center;
+            }
+        }
+
+        &#history {
+            display: flex;
+            flex-flow: column;
+            gap: 1rem;
+
+            .topic {
+                display: flex;
+                flex-flow: column;
+                gap: 1rem;
+            }
+        }
+
+        &#titles {
+            display: flex;
+            flex-flow: column;
+            gap: 1rem;
+
+            ul {
+                list-style: none;
+            }
+        }
+
+        &#galery {
+            #galeryDisplay {
+                display: grid;
+                grid-template-columns: repeat(4, 25%);
+                gap: 0.5rem;
+
+                .media {
+                    background: var(--url) center center / 180% no-repeat;
+                    width: 100%;
+                    aspect-ratio: 1/1;
+                    display: flex;
+                    align-items: end;
+                    justify-content: end;
+                    transition: 0.3s ease-in-out;
+                    position: relative;
+
+                    &:hover {
+                        transition: 0.3s ease-in-out;
+                        background-size: 200%;
+
+                        .material-symbols-outlined {
+                            background-color: #00000044;
+                            opacity: 100;
+                            transition: 0.3s ease-in-out;
+                        }
+                    }
+
+                    .material-symbols-outlined {
+                        background-color: transparent;
+                        height: 100%;
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        color: #fff;
+                        font-size: 4rem;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        transition: 0.3s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        &#players {
+            display: flex;
+            flex-flow: column;
+            gap: 1rem;
+            
+            table {
+                width: 100%;
+                border-collapse: collapse;
+
+                .header_row {
+                    background-color: #000;
+                    color: #fff;
+                    text-transform: capitalize;
+
+                    th {
+                        padding: 0.5rem 0;
+                        font-family: var(--sec-font);
+
+                        &:first-of-type {
+                            width: 10rem;
+                            color: #000;
+                        }
+                    }
+                }
+
+                tr {
+                    border-bottom: 0.1rem solid #000;
+                    border-right: 0.1rem solid #000;
+
+                    td {
+                        font-family: var(--logo-font);
+                        font-size: 2rem;
+                        font-weight: 400;
+                        text-align: center;
+
+                        &:nth-child(even) {
+                            background-color: #fff;
+                        }
+                        
+                        &:first-of-type {
+                            width: 10rem;
+                            display: flex;
+    
+                            img {
+                                width: 100%;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &#tshirts {
+            #display {
+                height: max-content;
+                width: 100%;
+                padding: 1rem 1rem 0 1rem;
+                display: flex;
+                gap: 1rem;
+
+                .card {
+                    height: max-content;
+                    width: 33%;
+                    display: flex;
+                    flex-flow: column;
+                    z-index: 1;
+
+                    .image {
+                        background: var(--front) center center / cover no-repeat;
+                        width: 100%;
+                        aspect-ratio: 1/1;
+                        transition: 0.2s ease-in-out;
+                    }
+
+                    &:hover .image {
+                        background: var(--back) center center / cover no-repeat;
+                        transition: 0.2s ease-in-out;
+                    }
+
+                    .data {
+                        background-color: #fff;
+                        margin-top: -2rem;
+                        padding: 2rem 0.5rem;
+                        border: 0.1rem solid #ebebeb;
+                        border-radius: 0.5rem;
+                        display: flex;
+                        flex-flow: column;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: -1;
+
+                        p {
+                            font-size: 1.4rem;
+                            font-family: var(--logo-font);
+                            text-transform: uppercase;
+                            letter-spacing: 0.2rem;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        &#contact {
+            p {
+                margin-bottom: 1rem;
+            }
+
+            form {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                label {
+                    font-family: var(--logo-font);
+                    display: flex;
+                    flex-flow: column;
+
+                    input, textarea {
+                        padding: 0.25rem;
+                        border: 0.1rem solid #ccc;
+                        border-radius: 0.25rem;
+                        font-family: var(--sec-font);
+                        resize: none;
+                    }
+                }
+
+                button {
+                    background-color: #fff;
+                    padding: 0.25rem 0;
+                    border: none;
+                    border-radius: 0.25rem;
+                    box-shadow: 0 0 0.1rem #ccc;
+                    font-family: var(--logo-font);
+                    font-size: 1rem;
+                    text-transform: uppercase;
+                    position: relative;
+                    cursor: pointer;
+
+                    &::before {
+                        content: '';
+                        width: 0%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background-color: #000;
+                        border: none;
+                        border-radius: 0.25rem;
+                        transition: 0.3s ease-in-out;
+                        z-index: 1;
+                    }
+
+                    &::after {
+                        content: 'Enviar';
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        color: transparent;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        z-index: 2;
+                        transition: 0.3s ease-in-out;
+                    }
+
+                    &:hover {
+                        &::before {
+                            transition: 0.3s ease-in-out;
+                            width: 100%;
+                        }
+
+                        &::after {
+                            transition: 0.3s ease-in-out;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Quando a tela tem menos que 850px as sessões diminuem o padding lateral para 5% e na tabela a coluna de nome dos jogadores é ocultada; A galeria passa a ter duas colunas. */
+@media screen and (max-width: 850px) {
+    main {
+        section {
+            padding: 5rem 5%;
+
+            &#players {
+                table {
+                    tr {
+                        th, td {
+                            &:nth-child(2) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &#tshirts {
+                #display {
+                    flex-flow: column;
+
+                    .card {
+                        width: 100%;
+                    }
+                }
+            }
+
+            &#galery {
+                #galeryDisplay {
+                    grid-template-columns: repeat(2, 50%);
+                }
+            }
+        }
+    }
+}

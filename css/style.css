@@ -1,0 +1,43 @@
+/* Icones */
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-straight/css/uicons-regular-straight.css');
+@import url('https://cdn-uicons.flaticon.com/2.6.0/uicons-bold-straight/css/uicons-bold-straight.css');
+
+/* Fontes */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Cal+Sans&family=Lunasima:wght@400;700&family=Staatliches&display=swap');
+
+/* Variáveis */
+:root {
+    --prim-color: #000;
+    --sec-color: #fff;
+
+    --logo-font: "Cal Sans", sans-serif;
+    --prim-font: "Archivo Black", sans-serif;
+    --sec-font: "Lunasima", sans-serif;
+}
+
+/* Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; outline: none; text-decoration: none; }
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    color: #0b0b0b;
+    font-family: var(--prim-font);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3.5rem max-content max-content;
+    grid-template-areas: "h" "m" "f";
+
+    header { grid-area: h; }
+
+    main { grid-area: m; }
+
+    footer { grid-area: f; }
+}
+
+i { display: flex; }
+
+button, a {
+    cursor: pointer;
+}
