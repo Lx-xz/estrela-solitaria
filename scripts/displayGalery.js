@@ -61,7 +61,7 @@ function displayGalery (M) {
         mediaElement.classList.add("media")
         // Se for vídeo, define banner e ícone de play
         if (media.type === 'video') {
-            mediaElement.style.setProperty('--url', `url(videos/banners/${media.url.replace('.mp4', '.png')})`)
+            mediaElement.style.setProperty('--url', `url(../videos/banners/${media.url.replace('.mp4', '.png')})`)
             mediaElement.setAttribute("data-alt", media.alt)
             mediaElement.innerHTML = `
                 <span class="material-symbols-outlined play">
@@ -71,7 +71,7 @@ function displayGalery (M) {
         }
         // Se for imagem, define url e ícone de fullscreen
         if (media.type === 'image') {
-            mediaElement.style.setProperty('--url', `url(images/${media.url})`)
+            mediaElement.style.setProperty('--url', `url(../images/${media.url})`)
             mediaElement.setAttribute("data-alt", media.alt)
             mediaElement.innerHTML = `
                 <span class="material-symbols-outlined fullscreen">
