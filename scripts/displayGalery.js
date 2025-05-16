@@ -112,17 +112,17 @@ MediaElements.forEach((mediaElement) => {
         // Se for vídeo, cria elemento <video>
         if (mediaElement.style.getPropertyValue('--url').includes('videos/')) {
             const video = document.createElement("video")
-            video.src = mediaElement.style.getPropertyValue('--url').replace('url(','').replace('banners/','').replace('png)','mp4')
+            video.src = mediaElement.style.getPropertyValue('--url').replace('url(.','').replace('banners/','').replace('png)','mp4')
             video.autoplay = true
             video.controls = true
             video.innerHTML = `
-                <track label="Português" kind="subtitles" srclang="pt" src="${mediaElement.style.getPropertyValue('--url').replace('url(','').replace('banners/','').replace('png)','vtt')}" default>
+                <track label="Português" kind="subtitles" srclang="pt" src="${mediaElement.style.getPropertyValue('--url').replace('url(.','').replace('banners/','').replace('png)','vtt')}" default>
             `
             window.appendChild(video)
         } else {
             // Se for imagem, cria elemento <img>
             const img = document.createElement("img")
-            img.src = mediaElement.style.getPropertyValue('--url').replace('url(', '').replace(')', '').replace(/"/g, '');
+            img.src = mediaElement.style.getPropertyValue('--url').replace('url(.', '').replace(')', '').replace(/"/g, '');
             window.appendChild(img)
         }
 
