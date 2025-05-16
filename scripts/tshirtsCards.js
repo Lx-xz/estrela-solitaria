@@ -27,8 +27,8 @@ Tshirts.forEach(tshirt => {
     
     // Cria a div da imagem e define as imagens de frente e verso via CSS custom property
     const imageDiv = document.createElement("div")
-    imageDiv.style.setProperty("--front", `url(/images/24_25_${tshirt.modelo}.png)`)
-    imageDiv.style.setProperty("--back", `url(/images/24_25_${tshirt.modelo}_back.png)`)
+    imageDiv.style.setProperty("--front", `url(images/24_25_${tshirt.modelo}.png)`)
+    imageDiv.style.setProperty("--back", `url(images/24_25_${tshirt.modelo}_back.png)`)
     imageDiv.className = "image"
     card.appendChild(imageDiv)
 
