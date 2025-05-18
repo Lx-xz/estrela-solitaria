@@ -18,6 +18,7 @@ header {
         text-transform: uppercase;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 0.25rem;
 
         i {
@@ -93,7 +94,18 @@ header {
 /* Quando a tela tem menos que 1450px o botão de menu (i) aparece e a ul sai do cabeçalho e vira um menu de abrir */
 @media screen and (max-width: 1600px) {
     header {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "n l .";
+
+        #logo {
+            grid-area: l;
+        }
+
         nav {
+            grid-area: n;
             display: flex;
             flex-flow: column;
 
@@ -105,10 +117,10 @@ header {
                 background-color: #fff;
                 width: 25vw;
                 height: 100vh;
-                border-left: 0.1rem solid #ccc;
+                border-right: 0.1rem solid #ccc;
                 position: absolute;
                 top: 0;
-                right: -25vw;
+                left: -25vw;
                 display: flex;
                 flex-flow: column;
                 align-items: center;
@@ -120,7 +132,7 @@ header {
 
                 &.active {
                     pointer-events: all;
-                    right: 0;
+                    left: 0;
                     transition: 0.5s ease-in-out;
                 }
 
@@ -174,12 +186,14 @@ header {
 /* Quando a tela tem menos que 850px o menu aumenta a largura para metade da largura visível */
 @media screen and (max-width: 850px) {
     header {
-        padding: 0 5%;
+        #logo {
+            scale: 0.75;
+        }
 
         nav {
             ul {
                 width: 50vw;
-                right: -50vw;
+                left: -50vw;
             }
         }
     }
